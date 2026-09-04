@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jesus G. Construction | Roofing, Siding & Decks</title>
+<meta name="description" content="Roofing, siding, and deck construction in Westfield, Zionsville, and Carmel, IN.">
+<!-- ============================================================
+  Jesus G. Construction - Landing Page
+  Como usar en WordPress / Elementor:
+  1) Sube estas 10 imagenes a tu Biblioteca de medios de WordPress:
+     logo.png, house-siding-finished-01.jpg, house-porch-finished-01.jpg,
+     roof-finished-01.jpg, screened-porch-finished-01.jpg, deck-finished-01.jpg,
+     deck-finished-02.jpg, porch-deck-finished-01.jpg, commercial-siding-01.jpg,
+     kitchen-finished-01.jpg
+  2) Por cada img, copia la URL que WordPress te da para ese archivo y
+     reemplaza el valor de src (cada img tiene un comentario arriba
+     indicando que archivo va ahi). Los fondos usan background-image
+     dentro del atributo style, tambien marcados con comentario. En la
+     galeria, cada foto tiene un <a href="#" class="lightbox-link">
+     - reemplaza tambien ese href con la misma URL de WordPress (es lo que
+     se ve ampliado en la caja de luz al hacer clic).
+  3) Por ahora hay un formulario PROVISIONAL (visualmente parecido a un
+     embed de GoHighLevel, pero sin conexion real) en 2 lugares: Hero y
+     CTA final. Busca <form class="jgc-fake-form"> y reemplaza TODO ese
+     bloque (el form completo) por el iframe + script real de GoHighLevel
+     cuando lo tengan.
+  4) Pega TODO este bloque (incluyendo el style y el script del final) en
+     un widget HTML de Elementor, en una pagina en blanco (sin header/footer
+     del tema si quieres la landing limpia).
+============================================================= -->
+<style>
+  #jgc-landing {
+    --gold: #c9a24b;
+    --gold-light: #e3c579;
+    --gold-dark: #9c7a2e;
+    --black: #0b0b0c;
+    --black-2: #17171a;
+    --black-3: #202024;
+    --line-d: #2c2c30;
+    --cream: #f3eee2;
+    --cream-2: #e9e0c9;
+    --ink: #211d15;
+    --ink-dim: #5d5748;
+    --line-l: #ddd2ab;
+    --heading: #fff;
+    --body: #bdb9ae;
+    --surface: var(--black-2);
+    --line: var(--line-d);
+    background: var(--black);
+    color: var(--body);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+  #jgc-landing * { box-sizing: border-box; }
+  #jgc-landing img { max-width: 100%; display: block; }
+  #jgc-landing a { text-decoration: none; }
+  #jgc-landing .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  #jgc-landing section { padding: 92px 0; margin: 0; }
+  #jgc-landing h1, #jgc-landing h2, #jgc-landing h3 {
+    font-family: 'Cormorant SC', Georgia, serif;
+    font-weight: 700;
+    color: var(--heading);
+    line-height: 1.05;
+    letter-spacing: 1px;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  #jgc-landing h1 { font-size: clamp(38px, 5.6vw, 62px); }
+  #jgc-landing h2 { font-size: clamp(30px, 4vw, 44px); }
+  #jgc-landing h3 { font-size: 20px; }
+  #jgc-landing p { color: var(--body); margin: 0 0 16px; font-size: 16px; }
+  #jgc-landing .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700;
+    margin-bottom: 14px;
+  }
+  #jgc-landing .eyebrow::before { content:""; width:22px; height:2px; background:var(--gold); display:inline-block; }
+  #jgc-landing .btn {
+    display: inline-block; background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    color: #211405; font-weight: 700; padding: 16px 34px; border-radius: 3px; letter-spacing: .3px;
+    transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 8px 24px rgba(201,162,75,.22);
+  }
+  #jgc-landing .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(201,162,75,.32); }
+  #jgc-landing .btn-outline {
+    display: inline-block; border: 1px solid var(--gold); color: var(--gold);
+    font-weight: 700; padding: 13px 28px; border-radius: 3px;
+  }
+
+  /* section theme helpers */
+  #jgc-landing .sec-dark { background: var(--black); --heading:#fff; --body:#bdb9ae; --surface: var(--black-2); --line: var(--line-d); }
+  #jgc-landing .sec-dark-alt { background: var(--black-2); --heading:#fff; --body:#bdb9ae; --surface: var(--black-3); --line: var(--line-d); }
+  #jgc-landing .sec-light { background: var(--cream); --heading: var(--ink); --body: var(--ink-dim); --surface: #fff; --line: var(--line-l); }
+
+  /* TOPBAR */
+  #jgc-landing #jgc-topbar { padding: 10px 0; margin: 0; background: var(--black); text-align: center; border-bottom: 1px solid var(--line-d); }
+  #jgc-topbar img { height: 92px; width: auto; display: inline-block; }
+
+  /* HERO */
+  #jgc-landing #jgc-hero { position: relative; padding: 0; margin: 0; min-height: 94vh; display: flex; align-items: center; overflow: hidden; }
+  #jgc-hero .slides { position: absolute; inset: 0; }
+  #jgc-hero .slide {
+    position: absolute; inset: 0; background-size: cover; background-position: center;
+    opacity: 0; animation: jgcFade 24s infinite;
+  }
+  #jgc-hero .slide:nth-child(1) { animation-delay: 0s; }
+  #jgc-hero .slide:nth-child(2) { animation-delay: 6s; }
+  #jgc-hero .slide:nth-child(3) { animation-delay: 12s; }
+  #jgc-hero .slide:nth-child(4) { animation-delay: 18s; }
+  @keyframes jgcFade {
+    0%   { opacity: 0; transform: scale(1.0); }
+    4%   { opacity: 1; }
+    22%  { opacity: 1; transform: scale(1.015); }
+    28%  { opacity: 0; transform: scale(1.015); }
+    100% { opacity: 0; }
+  }
+  #jgc-hero .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, rgba(11,11,12,.66) 0%, rgba(11,11,12,.42) 46%, rgba(11,11,12,.12) 100%);
+  }
+  #jgc-hero h1, #jgc-hero .badge, #jgc-hero p.lead { text-shadow: 0 2px 18px rgba(0,0,0,.55); }
+  #jgc-hero .wrap {
+    position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px;
+    align-items: center; padding-top: 70px; padding-bottom: 70px; width: 100%;
+  }
+  #jgc-hero .badge {
+    display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.25);
+    border-radius: 30px; padding: 7px 16px; font-size: 13px; color: var(--gold-light);
+    margin-bottom: 22px; letter-spacing: .5px; backdrop-filter: blur(2px);
+  }
+  #jgc-hero .badge::before { content:"\25CF"; font-size:9px; color: var(--gold); }
+  #jgc-hero p.lead { font-size: 18px; color: #ece9df; max-width: 520px; }
+  #jgc-hero-form {
+    background: rgba(23,23,26,.88); border: 1px solid rgba(255,255,255,.14); border-radius: 8px;
+    padding: 30px; backdrop-filter: blur(6px);
+  }
+  #jgc-hero-form h3 { color: var(--gold); margin-bottom: 6px; }
+  #jgc-hero-form .sub { font-size: 14px; color: #ada99e; margin-bottom: 20px; }
+  #jgc-hero-form .form-slot { min-height: 320px; }
+
+  /* Formulario provisional (imita el look de un embed de GoHighLevel).
+     Reemplazar el <div class="form-slot">...</div> completo por el
+     iframe+script real de GoHighLevel cuando lo tengan. */
+  .jgc-fake-form { display: flex; flex-direction: column; gap: 14px; }
+  .jgc-fake-form label { font-size: 12px; font-weight: 600; color: #a9a59a; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 5px; display: block; }
+  .jgc-fake-form input, .jgc-fake-form select, .jgc-fake-form textarea {
+    width: 100%; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.18);
+    border-radius: 5px; padding: 12px 14px; color: #fff; font-family: inherit; font-size: 14px;
+  }
+  .jgc-fake-form input::placeholder, .jgc-fake-form textarea::placeholder { color: #706c62; }
+  .jgc-fake-form input:focus, .jgc-fake-form select:focus, .jgc-fake-form textarea:focus { outline: none; border-color: var(--gold); }
+  .jgc-fake-form textarea { resize: vertical; min-height: 100px; }
+  .jgc-fake-form button {
+    margin-top: 4px; border: none; cursor: pointer; width: 100%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    color: #211405; font-weight: 700; padding: 14px; border-radius: 5px; font-size: 15px; font-family: inherit;
+  }
+  .jgc-fake-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .jgc-fake-form .row2 { grid-template-columns: 1fr; } }
+  .jgc-fake-form .consent { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #cfccc3; }
+  .jgc-fake-form .consent input { width: auto; margin-top: 3px; accent-color: var(--gold); }
+  #jgc-hero-form .fine { font-size: 12px; color: #86837a; margin-top: 14px; }
+
+  /* TRUST BAR */
+  #jgc-landing #jgc-trust { padding: 50px 0; margin: 0; border-top: 1px solid var(--line-l); border-bottom: 1px solid var(--line-l); }
+  #jgc-trust .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
+  #jgc-trust .item { text-align: center; padding: 0 12px; }
+  #jgc-trust .icon {
+    width: 54px; height: 54px; margin: 0 auto 16px; border-radius: 50%; border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center; color: var(--gold-dark); font-weight:700; font-size: 20px;
+  }
+  #jgc-trust h3 { font-size: 18px; margin-bottom: 8px; }
+  #jgc-trust p { font-size: 14px; margin: 0; }
+
+  /* PROBLEM (image bg) */
+  #jgc-problem { position: relative; text-align: center; background-size: cover; background-position: center; }
+  #jgc-problem .scrim { position:absolute; inset:0; background: linear-gradient(180deg, rgba(11,11,12,.58), rgba(11,11,12,.68)); }
+  #jgc-problem .wrap { position: relative; max-width: 840px; }
+  #jgc-problem h2 { color: var(--gold-light); text-shadow: 0 2px 16px rgba(0,0,0,.65); }
+  #jgc-problem p { color: #ece9df; text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+
+  /* SOLUTION (image + text) */
+  #jgc-solution .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  #jgc-solution img { border-radius: 8px; box-shadow: 0 20px 44px rgba(0,0,0,.14); }
+  #jgc-solution .stat-row { display: flex; gap: 34px; margin-top: 28px; flex-wrap: wrap; }
+  #jgc-solution .stat b { display: block; font-family:'Cormorant SC',serif; font-size: 30px; color: var(--gold-dark); }
+  #jgc-solution .stat span { font-size: 13px; color: var(--ink-dim); }
+
+  /* SERVICES */
+  #jgc-services .head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  #jgc-services .grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+  #jgc-services .card {
+    background: var(--black-3); border: 1px solid var(--line-d); border-radius: 8px; padding: 34px 26px;
+    transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  #jgc-services .card:hover { border-color: var(--gold); transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,.4); }
+  #jgc-services .card.jgc-card-pre { opacity: 0; transform: translateY(24px); }
+  #jgc-services .card.jgc-card-in { animation: jgcCardIn .6s ease forwards; }
+  #jgc-services .card:nth-child(1).jgc-card-in { animation-delay: 0s; }
+  #jgc-services .card:nth-child(2).jgc-card-in { animation-delay: .1s; }
+  #jgc-services .card:nth-child(3).jgc-card-in { animation-delay: .2s; }
+  #jgc-services .card:nth-child(4).jgc-card-in { animation-delay: .3s; }
+  @keyframes jgcCardIn { to { opacity: 1; transform: translateY(0); } }
+  #jgc-services .num { font-family:'Cormorant SC',serif; color: var(--gold); font-size: 15px; margin-bottom: 14px; }
+  #jgc-services h3 { font-size: 18px; }
+  #jgc-services p { font-size: 14px; margin: 0; }
+
+  /* PROCESS */
+  #jgc-process .head { text-align: center; max-width: 640px; margin: 0 auto 54px; }
+  #jgc-process .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; }
+  #jgc-process .step-n {
+    font-family:'Cormorant SC',serif; font-size: 44px; color: transparent;
+    -webkit-text-stroke: 1px var(--gold-dark); margin-bottom: 10px;
+  }
+  #jgc-process h3 { font-size: 17px; }
+  #jgc-process p { font-size: 14px; }
+
+  /* ABOUT */
+  #jgc-about .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: center; }
+  #jgc-about img { border-radius: 8px; }
+  #jgc-about .diffs { display: grid; gap: 20px; margin-top: 26px; }
+  #jgc-about .diff { display: flex; gap: 16px; align-items: flex-start; }
+  #jgc-about .diff .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex: none; }
+  #jgc-about .diff h3 { font-size: 16px; margin-bottom: 4px; }
+  #jgc-about .diff p { font-size: 14px; margin: 0; }
+
+  /* GALLERY - edge to edge mosaic, no gaps */
+  #jgc-gallery .head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  #jgc-gallery .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 3px; }
+  #jgc-gallery .grid a:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  #jgc-gallery .grid a { position: relative; overflow: hidden; display: block; }
+  #jgc-gallery .grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  #jgc-gallery .grid a:hover img { transform: scale(1.08); }
+  #jgc-gallery .grid a::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.30), transparent 40%); }
+  #jgc-gallery .grid a { cursor: zoom-in; }
+
+  /* LIGHTBOX */
+  #jgc-lightbox {
+    position: fixed; inset: 0; background: rgba(8,8,9,.94); z-index: 99999;
+    display: none; align-items: center; justify-content: center; padding: 48px; cursor: zoom-out;
+  }
+  #jgc-lightbox.open { display: flex; }
+  #jgc-lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 6px; box-shadow: 0 30px 90px rgba(0,0,0,.6); cursor: default; }
+  #jgc-lightbox .jgc-lightbox-close {
+    position: absolute; top: 22px; right: 30px; width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.25); color: #fff;
+    font-size: 24px; line-height: 1; cursor: pointer;
+  }
+
+  /* TESTIMONIALS */
+  #jgc-testimonials .head { text-align: center; max-width: 700px; margin: 0 auto 20px; }
+  #jgc-testimonials .rating { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 50px; flex-wrap: wrap; }
+  #jgc-testimonials .stars { color: var(--gold); letter-spacing: 2px; font-size: 18px; }
+  #jgc-testimonials .rating span { color: var(--body); font-size: 14px; }
+  #jgc-testimonials .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  #jgc-testimonials .card { background: #fdfbf6; border: 1px solid var(--line-l); border-radius: 8px; padding: 30px; box-shadow: 0 14px 34px rgba(0,0,0,.22); }
+  #jgc-testimonials .card .stars { font-size: 14px; margin-bottom: 14px; display:block; }
+  #jgc-testimonials .card p { color: #45412f; font-size: 15px; font-style: italic; }
+  #jgc-testimonials .who { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+  #jgc-testimonials .avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--gold); color: #211405; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  #jgc-testimonials .who b { display: block; font-size: 14px; color: var(--ink); }
+  #jgc-testimonials .who span { font-size: 12px; color: #8a8577; }
+
+  /* FAQ */
+  #jgc-faq .wrap { max-width: 820px; }
+  #jgc-faq .head { text-align: center; margin-bottom: 44px; }
+  #jgc-faq details { border-bottom: 1px solid var(--line-l); padding: 22px 0; }
+  #jgc-faq summary {
+    cursor: pointer; list-style: none; font-family:'Cormorant SC',serif; font-size: 18px;
+    color: var(--ink); display: flex; justify-content: space-between; align-items: center;
+  }
+  #jgc-faq summary::-webkit-details-marker { display: none; }
+  #jgc-faq summary::after { content: "+"; color: var(--gold-dark); font-size: 22px; margin-left: 20px; }
+  #jgc-faq details[open] summary::after { content: "\2013"; }
+  #jgc-faq details p { margin-top: 14px; margin-bottom: 0; font-size: 15px; }
+
+  /* FINAL CTA - dos columnas: info izquierda, formulario derecha */
+  #jgc-cta .wrap { max-width: 1080px; }
+  #jgc-cta .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  #jgc-cta .cta-info { text-align: left; }
+  #jgc-cta img.logo { width: 120px; margin: 0 0 26px; }
+  #jgc-cta-form { background: var(--black-3); border: 1px solid var(--line-d); border-radius: 8px; padding: 30px; text-align: left; }
+  #jgc-cta-form .form-slot { min-height: 320px; }
+
+  /* FOOTER */
+  #jgc-landing #jgc-footer { padding: 40px 0; margin: 0; text-align: center; }
+  #jgc-footer p { font-size: 13px; color: #726f68; margin: 4px 0; }
+  #jgc-footer a { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    #jgc-hero .wrap { grid-template-columns: 1fr; padding-top: 120px; }
+    #jgc-hero .overlay { background: linear-gradient(180deg, rgba(11,11,12,.58) 0%, rgba(11,11,12,.72) 55%, rgba(11,11,12,.88) 100%); }
+    #jgc-trust .grid, #jgc-services .grid, #jgc-process .steps, #jgc-testimonials .grid { grid-template-columns: 1fr 1fr; }
+    #jgc-solution .wrap, #jgc-about .wrap { grid-template-columns: 1fr; }
+    #jgc-about img { order: -1; }
+    #jgc-solution .stat-row { flex-wrap: nowrap; gap: 12px; }
+    #jgc-solution .stat { flex: 1; min-width: 0; }
+    #jgc-solution .stat b { font-size: 22px; }
+    #jgc-solution .stat span { font-size: 11px; }
+    #jgc-process .steps .step { text-align: center; }
+    #jgc-process .step-n { margin-left: auto; margin-right: auto; }
+    #jgc-cta .cta-grid { grid-template-columns: 1fr; }
+    #jgc-cta .cta-info { text-align: center; }
+    #jgc-cta img.logo { margin: 0 auto 26px; }
+    #jgc-cta-form h3 { text-align: center; }
+    #jgc-gallery .grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 170px; }
+    #jgc-gallery .grid a:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+  }
+  @media (max-width: 620px) {
+    #jgc-landing section { padding: 60px 0; }
+    #jgc-landing #jgc-topbar { padding: 6px 0; }
+    #jgc-topbar img { height: 60px; }
+    #jgc-trust .grid, #jgc-services .grid, #jgc-process .steps, #jgc-testimonials .grid, #jgc-gallery .grid { grid-template-columns: 1fr; }
+    #jgc-gallery .grid a:nth-child(1) { grid-column: span 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #jgc-hero .slide { animation: none; opacity: 0; }
+    #jgc-hero .slide:first-child { opacity: 1; }
+    #jgc-services .card.jgc-card-pre { opacity: 1; transform: none; }
+    #jgc-services .card.jgc-card-in { animation: none; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<div id="jgc-landing">
+
+  <!-- TOPBAR: logo original de la marca -->
+  <header id="jgc-topbar">
+    <!-- Imagen: logo.png -->
+    <img src="images/logo.png" alt="Jesus G. Construction logo">
+  </header>
+
+  <!-- 1. HERO (fondo con carrusel/crossfade de 4 fotos) -->
+  <section id="jgc-hero">
+    <div class="slides">
+      <!-- Imagenes de fondo del carrusel (las mas luminosas, para que el Hero no se vea oscuro): house-porch-finished-01.jpg, screened-porch-finished-01.jpg, roof-finished-01.jpg, deck-finished-01.jpg -->
+      <div class="slide" style="background-image:url('images/house-porch-finished-01.jpg');"></div>
+      <div class="slide" style="background-image:url('images/screened-porch-finished-01.jpg');"></div>
+      <div class="slide" style="background-image:url('images/roof-finished-01.jpg');"></div>
+      <div class="slide" style="background-image:url('images/deck-finished-01.jpg');"></div>
+    </div>
+    <div class="overlay"></div>
+    <div class="wrap">
+      <div>
+        <span class="badge">Hamilton County, Indiana</span>
+        <h1>Premium Roofing, Siding &amp; Decks &mdash; Built Right, Built to Last.</h1>
+        <p class="lead">Full exterior specialists serving Westfield, Zionsville, Carmel and Hamilton County homeowners for over 10 years. GAF Certified. BBB Accredited. Financing available.</p>
+      </div>
+      <div id="jgc-hero-form">
+        <h3>Get Your Free Estimate</h3>
+        <div class="sub">Tell us about your project — we'll follow up fast.</div>
+        <div class="form-slot">
+          <!-- Formulario provisional: reemplazar TODO este bloque (form.jgc-fake-form)
+               por el iframe + script de GoHighLevel cuando lo tengan. -->
+          <form class="jgc-fake-form" onsubmit="return false;">
+            <div class="row2">
+              <div>
+                <label for="jgc-h-fname">First Name</label>
+                <input id="jgc-h-fname" type="text" placeholder="Enter your first name">
+              </div>
+              <div>
+                <label for="jgc-h-lname">Last Name</label>
+                <input id="jgc-h-lname" type="text" placeholder="Enter your last name">
+              </div>
+            </div>
+            <div class="row2">
+              <div>
+                <label for="jgc-h-phone">Phone *</label>
+                <input id="jgc-h-phone" type="tel" placeholder="+1 (463) 000-0000" required>
+              </div>
+              <div>
+                <label for="jgc-h-email">Email *</label>
+                <input id="jgc-h-email" type="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div>
+              <label for="jgc-h-address">Address</label>
+              <input id="jgc-h-address" type="text" placeholder="Enter your address">
+            </div>
+            <div>
+              <label for="jgc-h-desc">Project Description:</label>
+              <textarea id="jgc-h-desc" placeholder="Describe your project here"></textarea>
+            </div>
+            <label class="consent"><input type="checkbox"> <span>I agree to be contacted by phone or email.</span></label>
+            <button type="button">Get My Free Estimate</button>
+          </form>
+        </div>
+        <div class="fine">* Required fields. We respect your privacy and never share your information.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TRUST BAR (claro) -->
+  <section id="jgc-trust" class="sec-light">
+    <div class="wrap grid">
+      <div class="item">
+        <div class="icon">10+</div>
+        <h3>10+ Years of Experience</h3>
+        <p>A decade of expert craftsmanship you can trust.</p>
+      </div>
+      <div class="item">
+        <div class="icon">&#10003;</div>
+        <h3>5-Year Workmanship Warranty</h3>
+        <p>Every project backed by our written guarantee.</p>
+      </div>
+      <div class="item">
+        <div class="icon">&#9733;</div>
+        <h3>GAF Certified &amp; BBB Accredited</h3>
+        <p>Verified quality and accountability, every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PROBLEM (oscuro, con foto de fondo) -->
+  <!-- Imagen de fondo: porch-deck-finished-01.jpg -->
+  <section id="jgc-problem" class="sec-dark" style="background-image:url('images/porch-deck-finished-01.jpg');">
+    <div class="scrim"></div>
+    <div class="wrap">
+      <h2>Tired of contractors who cut corners, disappear mid-project, or hand you the cheapest option instead of the right one?</h2>
+      <p>An aging roof, worn-out siding, or an unsafe deck doesn't just hurt your home's curb appeal — it puts your family and your investment at risk. Too many Hamilton County homeowners have been burned by contractors chasing the lowest bid instead of doing the job right.</p>
+    </div>
+  </section>
+
+  <!-- 4. SOLUTION (claro, imagen + texto) -->
+  <section id="jgc-solution" class="sec-light">
+    <div class="wrap">
+      <!-- Imagen: deck-finished-02.jpg -->
+      <img src="images/deck-finished-02.jpg" alt="Finished deck built by Jesus G. Construction">
+      <div>
+        <span class="eyebrow">Our Solution</span>
+        <h2>Full Exterior Renovation, Done Right the First Time</h2>
+        <p>At <strong>Jesus G. Construction</strong>, we handle your roof, siding, and deck as one complete project — not a patchwork of quick fixes. With 10+ years of experience, GAF certification, and financing options available, we deliver the high-end, lasting results homeowners in Westfield, Zionsville, and Carmel expect.</p>
+        <a href="#jgc-hero-form" class="btn">Schedule Your Free Estimate</a>
+        <div class="stat-row">
+          <div class="stat"><b>10+</b><span>Years in Business</span></div>
+          <div class="stat"><b>5.0&#9733;</b><span>Google Rating</span></div>
+          <div class="stat"><b>5-Yr</b><span>Warranty</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SERVICES (oscuro) -->
+  <section id="jgc-services" class="sec-dark-alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">What We Do</span>
+        <h2>Complete Exterior Services, Built for Indiana Homes</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="num">01</div>
+          <h3>Roof Replacement</h3>
+          <p>Full residential roof replacements built to withstand Indiana's weather, backed by our workmanship warranty.</p>
+        </div>
+        <div class="card">
+          <div class="num">02</div>
+          <h3>Siding Installation &amp; Replacement</h3>
+          <p>Durable, precisely installed siding that protects your home and boosts curb appeal for years to come.</p>
+        </div>
+        <div class="card">
+          <div class="num">03</div>
+          <h3>Custom Decks</h3>
+          <p>New builds and replacements designed to be the outdoor gathering space your family actually wants.</p>
+        </div>
+        <div class="card">
+          <div class="num">04</div>
+          <h3>Porches &amp; Additions</h3>
+          <p>Screened porches and exterior additions built to match your home, inside and out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROCESS (claro) -->
+  <section id="jgc-process" class="sec-light">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">How We Work</span>
+        <h2>From Estimate to Finished Project in 4 Steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <h3>Free Site Visit &amp; Estimate</h3>
+          <p>We assess your home and give you an honest, detailed estimate — no pressure, no surprises.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <h3>Transparent Planning &amp; Financing</h3>
+          <p>Clear pricing, a realistic timeline, and financing options if you need them.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <h3>Expert Installation</h3>
+          <p>Our team executes every detail with precision, from tear-off to final trim.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">04</div>
+          <h3>Final Walkthrough &amp; Warranty</h3>
+          <p>We review the finished work with you and back it with our 5-year workmanship warranty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ABOUT (oscuro) -->
+  <section id="jgc-about" class="sec-dark">
+    <div class="wrap">
+      <!-- Imagen: house-porch-finished-01.jpg -->
+      <img src="images/house-porch-finished-01.jpg" alt="Home exterior renovation by Jesus G. Construction">
+      <div>
+        <span class="eyebrow">About Us</span>
+        <h2>Jesus G. Construction: Full Exterior Specialists</h2>
+        <p>Led by Jesus Guadalupe Angel and based in Westfield, Indiana, we've spent over 10 years helping homeowners across Hamilton County — Westfield, Zionsville, Carmel and beyond — replace and rebuild their roofs, siding, and decks with lasting, high-end results. We're not the cheapest option, and we're not trying to be — we're the contractor you call when you want it done right.</p>
+        <div class="diffs">
+          <div class="diff">
+            <span class="dot"></span>
+            <div><h3>Built to Last</h3><p>5-year workmanship warranty on every project, no exceptions.</p></div>
+          </div>
+          <div class="diff">
+            <span class="dot"></span>
+            <div><h3>GAF &amp; BBB Verified</h3><p>Certified and accredited, so you know exactly who you're hiring.</p></div>
+          </div>
+          <div class="diff">
+            <span class="dot"></span>
+            <div><h3>Financing Available</h3><p>Get the exterior your home needs, on terms that work for you.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. GALLERY (claro, mosaico sin espacios) -->
+  <section id="jgc-gallery" class="sec-light">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">Our Work</span>
+        <h2>Recent Projects Across Hamilton County</h2>
+      </div>
+    </div>
+    <div class="grid">
+      <!-- Imagen: screened-porch-finished-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/screened-porch-finished-01.jpg" alt="Finished screened porch addition"></a>
+      <!-- Imagen: roof-finished-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/roof-finished-01.jpg" alt="Finished residential roof replacement"></a>
+      <!-- Imagen: deck-finished-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/deck-finished-01.jpg" alt="Finished custom deck"></a>
+      <!-- Imagen: porch-deck-finished-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/porch-deck-finished-01.jpg" alt="Finished porch deck with columns"></a>
+      <!-- Imagen: commercial-siding-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/commercial-siding-01.jpg" alt="Commercial building siding installation"></a>
+      <!-- Imagen: deck-finished-02.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/deck-finished-02.jpg" alt="Finished wood deck"></a>
+      <!-- Imagen: kitchen-finished-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/kitchen-finished-01.jpg" alt="Finished kitchen remodel"></a>
+      <!-- Imagen: house-porch-finished-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/house-porch-finished-01.jpg" alt="Home with finished wraparound porch"></a>
+      <!-- Imagen: house-siding-finished-01.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/house-siding-finished-01.jpg" alt="Home with finished siding and roof"></a>
+    </div>
+  </section>
+
+  <!-- 9. TESTIMONIALS (oscuro) -->
+  <section id="jgc-testimonials" class="sec-dark-alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">Testimonials</span>
+        <h2>5.0 Stars on Google — Straight From Our Clients</h2>
+      </div>
+      <div class="rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>5.0 average from 7 reviews on Google</span>
+        <a href="https://g.page/r/CYMVWBI4xN7FEAE/review" target="_blank" class="btn-outline">Read Our Reviews on Google</a>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"Professional and prompt customer service with quality work and fair prices. Highly recommend!"</p>
+          <div class="who">
+            <div class="avatar">S</div>
+            <div><b>Staci LaGrange</b><span>Google Review</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"I couldn't be happier — this company did what they said they were going to do! Now and days that's huge. Just showing up and doing what you said you're going to do is a 4-star service! Thank you so much for your hard work."</p>
+          <div class="who">
+            <div class="avatar">R</div>
+            <div><b>Ricardo Jacome</b><span>Google Review</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>"Jesus G Construction did an excellent job on our project. The team was efficient, detail-oriented, and kept everything clean throughout the process. The siding installation turned out great and has held up really well over time. Highly recommend them if you're looking for quality craftsmanship and professionalism."</p>
+          <div class="who">
+            <div class="avatar">J</div>
+            <div><b>Jenessa Gonzales</b><span>Google Review</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ (claro) -->
+  <section id="jgc-faq" class="sec-light">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <details open>
+        <summary>How much would it cost?</summary>
+        <p>Every home is different, so we provide a free, no-obligation estimate after a quick site visit — that's the only way to give you an accurate, honest price.</p>
+      </details>
+      <details>
+        <summary>How long will it take?</summary>
+        <p>Timelines depend on the scope of the project. We'll walk you through a realistic schedule during your free estimate and keep you updated every step of the way.</p>
+      </details>
+      <details>
+        <summary>Do you offer any discounts?</summary>
+        <p>We offer financing options to help your project fit your budget — ask us about current options when you schedule your free estimate.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 11. FINAL CTA (oscuro, dos columnas: info | formulario) -->
+  <section id="jgc-cta" class="sec-dark">
+    <div class="wrap cta-grid">
+      <div class="cta-info">
+        <!-- Imagen: logo.png -->
+        <img class="logo" src="images/logo.png" alt="Jesus G. Construction logo">
+        <h1>Ready for a Roof, Siding, or Deck You Can Be Proud Of?</h1>
+        <p>Don't settle for the cheapest quote and the lowest quality. Contact Jesus G. Construction today and let's build something that lasts.</p>
+      </div>
+      <div id="jgc-cta-form">
+        <h3 style="color:var(--gold);">Quote Form</h3>
+        <div class="form-slot">
+          <!-- Formulario provisional: reemplazar TODO este bloque (form.jgc-fake-form)
+               por el iframe + script de GoHighLevel cuando lo tengan. -->
+          <form class="jgc-fake-form" onsubmit="return false;">
+            <div class="row2">
+              <div>
+                <label for="jgc-c-fname">First Name</label>
+                <input id="jgc-c-fname" type="text" placeholder="Enter your first name">
+              </div>
+              <div>
+                <label for="jgc-c-lname">Last Name</label>
+                <input id="jgc-c-lname" type="text" placeholder="Enter your last name">
+              </div>
+            </div>
+            <div class="row2">
+              <div>
+                <label for="jgc-c-phone">Phone *</label>
+                <input id="jgc-c-phone" type="tel" placeholder="+1 (463) 000-0000" required>
+              </div>
+              <div>
+                <label for="jgc-c-email">Email *</label>
+                <input id="jgc-c-email" type="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div>
+              <label for="jgc-c-address">Address</label>
+              <input id="jgc-c-address" type="text" placeholder="Enter your address">
+            </div>
+            <div>
+              <label for="jgc-c-desc">Project Description:</label>
+              <textarea id="jgc-c-desc" placeholder="Describe your project here"></textarea>
+            </div>
+            <label class="consent"><input type="checkbox"> <span>I agree to be contacted by phone or email.</span></label>
+            <button type="button">Get My Free Estimate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FOOTER -->
+  <section id="jgc-footer" class="sec-dark">
+    <div class="wrap">
+      <p>© 2026 Jesus G. Construction. All rights reserved. Licensed, bonded, and fully insured.</p>
+      <p>Serving Westfield, Zionsville, Carmel and Hamilton County, Indiana.</p>
+      <p><a href="tel:+14632503700">(463) 250-3700</a> &nbsp;·&nbsp; <a href="mailto:jesus@jesusgconstruction.com">jesus@jesusgconstruction.com</a></p>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX: caja de luz para ampliar fotos de la galeria al hacer clic -->
+  <div id="jgc-lightbox">
+    <button type="button" class="jgc-lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('jgc-lightbox');
+  if (!lb) return;
+  var lbImg = lb.querySelector('img');
+  var closeBtn = lb.querySelector('.jgc-lightbox-close');
+
+  document.querySelectorAll('#jgc-gallery a.lightbox-link').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var inner = a.querySelector('img');
+      lbImg.src = inner ? inner.src : '';
+      lbImg.alt = inner ? inner.alt : '';
+      lb.classList.add('open');
+    });
+  });
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+  }
+  closeBtn.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+(function () {
+  var cards = document.querySelectorAll('#jgc-services .card');
+  if (!('IntersectionObserver' in window) || !cards.length) return;
+  cards.forEach(function (c) { c.classList.add('jgc-card-pre'); });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('jgc-card-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .15 });
+  cards.forEach(function (c) { io.observe(c); });
+})();
+</script>
+</body>
+</html>
