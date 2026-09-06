@@ -315,6 +315,11 @@
     #jgc-topbar img { height: 76px; }
     #jgc-trust .grid, #jgc-services .grid, #jgc-process .steps, #jgc-testimonials .grid, #jgc-gallery .grid { grid-template-columns: 1fr; }
     #jgc-gallery .grid a:nth-child(1) { grid-column: span 1; }
+    /* Fotos recortadas en vertical especificamente para celular (el resto usa las horizontales de escritorio/tablet) */
+    #jgc-hero .slide:nth-child(1) { background-image: url('images/jgc-hero-01-mobile.jpg') !important; background-position: center !important; }
+    #jgc-hero .slide:nth-child(2) { background-image: url('images/jgc-hero-02-mobile.jpg') !important; background-position: center !important; }
+    #jgc-hero .slide:nth-child(3) { background-image: url('images/jgc-hero-03-mobile.jpg') !important; background-position: center !important; }
+    #jgc-problem { background-image: url('images/house-exterior-01-mobile.jpg') !important; }
   }
   @media (prefers-reduced-motion: reduce) {
     #jgc-hero .slide { animation: none; opacity: 0; }
