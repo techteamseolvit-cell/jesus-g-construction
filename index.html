@@ -21,11 +21,9 @@
      galeria, cada foto tiene un <a href="#" class="lightbox-link">
      - reemplaza tambien ese href con la misma URL de WordPress (es lo que
      se ve ampliado en la caja de luz al hacer clic).
-  3) Por ahora hay un formulario PROVISIONAL (visualmente parecido a un
-     embed de GoHighLevel, pero sin conexion real) en 2 lugares: Hero y
-     CTA final. Busca <form class="jgc-fake-form"> y reemplaza TODO ese
-     bloque (el form completo) por el iframe + script real de GoHighLevel
-     cuando lo tengan.
+  3) Este cliente SI tiene formulario real de GoHighLevel (ya integrado
+     en Hero y CTA final). No es necesario cambiar nada del formulario,
+     solo el diseño alrededor si hace falta.
   4) Pega TODO este bloque (incluyendo el style y el script del final) en
      un widget HTML de Elementor, en una pagina en blanco (sin header/footer
      del tema si quieres la landing limpia).
@@ -136,7 +134,7 @@
   }
   #jgc-hero-form h3 { color: var(--gold); margin-bottom: 6px; }
   #jgc-hero-form .sub { font-size: 14px; color: #ada99e; margin-bottom: 20px; }
-  #jgc-hero-form .form-slot { min-height: 320px; }
+  #jgc-hero-form .form-slot { min-height: 320px; overflow: hidden; }
 
   /* Formulario provisional (imita el look de un embed de GoHighLevel).
      Reemplazar el <div class="form-slot">...</div> completo por el
@@ -281,7 +279,7 @@
   #jgc-cta .cta-info { text-align: left; }
   #jgc-cta img.logo { width: 120px; margin: 0 0 26px; }
   #jgc-cta-form { background: var(--black-3); border: 1px solid var(--line-d); border-radius: 8px; padding: 30px; text-align: left; }
-  #jgc-cta-form .form-slot { min-height: 320px; }
+  #jgc-cta-form .form-slot { min-height: 320px; overflow: hidden; }
 
   /* FOOTER */
   #jgc-landing #jgc-footer { padding: 40px 0; margin: 0; text-align: center; }
@@ -359,40 +357,28 @@
         <h3>Get Your Free Estimate</h3>
         <div class="sub">Tell us about your project — we'll follow up fast.</div>
         <div class="form-slot">
-          <!-- Formulario provisional: reemplazar TODO este bloque (form.jgc-fake-form)
-               por el iframe + script de GoHighLevel cuando lo tengan. -->
-          <form class="jgc-fake-form" onsubmit="return false;">
-            <div class="row2">
-              <div>
-                <label for="jgc-h-fname">First Name</label>
-                <input id="jgc-h-fname" type="text" placeholder="Enter your first name">
-              </div>
-              <div>
-                <label for="jgc-h-lname">Last Name</label>
-                <input id="jgc-h-lname" type="text" placeholder="Enter your last name">
-              </div>
-            </div>
-            <div class="row2">
-              <div>
-                <label for="jgc-h-phone">Phone *</label>
-                <input id="jgc-h-phone" type="tel" placeholder="+1 (463) 000-0000" required>
-              </div>
-              <div>
-                <label for="jgc-h-email">Email *</label>
-                <input id="jgc-h-email" type="email" placeholder="your@email.com" required>
-              </div>
-            </div>
-            <div>
-              <label for="jgc-h-address">Address</label>
-              <input id="jgc-h-address" type="text" placeholder="Enter your address">
-            </div>
-            <div>
-              <label for="jgc-h-desc">Project Description:</label>
-              <textarea id="jgc-h-desc" placeholder="Describe your project here"></textarea>
-            </div>
-            <label class="consent"><input type="checkbox"> <span>I agree to be contacted by phone or email.</span></label>
-            <button type="button">Get My Free Estimate</button>
-          </form>
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/7VeToYUwL5OI6NYXvrg9"
+    style="width:100%;height:100%;border:none;border-radius:8px;overflow:hidden;"
+    scrolling="no"
+    id="inline-7VeToYUwL5OI6NYXvrg9"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Form Landing One"
+    data-height="615"
+    data-layout-iframe-id="inline-7VeToYUwL5OI6NYXvrg9"
+    data-form-id="7VeToYUwL5OI6NYXvrg9"
+    data-cookie-consent="true"
+    data-cookie-consent-provider="auto"
+    title="Form Landing One"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
         </div>
         <div class="fine">* Required fields. We respect your privacy and never share your information.</div>
       </div>
@@ -659,40 +645,28 @@
       <div id="jgc-cta-form">
         <h3 style="color:var(--gold);">Quote Form</h3>
         <div class="form-slot">
-          <!-- Formulario provisional: reemplazar TODO este bloque (form.jgc-fake-form)
-               por el iframe + script de GoHighLevel cuando lo tengan. -->
-          <form class="jgc-fake-form" onsubmit="return false;">
-            <div class="row2">
-              <div>
-                <label for="jgc-c-fname">First Name</label>
-                <input id="jgc-c-fname" type="text" placeholder="Enter your first name">
-              </div>
-              <div>
-                <label for="jgc-c-lname">Last Name</label>
-                <input id="jgc-c-lname" type="text" placeholder="Enter your last name">
-              </div>
-            </div>
-            <div class="row2">
-              <div>
-                <label for="jgc-c-phone">Phone *</label>
-                <input id="jgc-c-phone" type="tel" placeholder="+1 (463) 000-0000" required>
-              </div>
-              <div>
-                <label for="jgc-c-email">Email *</label>
-                <input id="jgc-c-email" type="email" placeholder="your@email.com" required>
-              </div>
-            </div>
-            <div>
-              <label for="jgc-c-address">Address</label>
-              <input id="jgc-c-address" type="text" placeholder="Enter your address">
-            </div>
-            <div>
-              <label for="jgc-c-desc">Project Description:</label>
-              <textarea id="jgc-c-desc" placeholder="Describe your project here"></textarea>
-            </div>
-            <label class="consent"><input type="checkbox"> <span>I agree to be contacted by phone or email.</span></label>
-            <button type="button">Get My Free Estimate</button>
-          </form>
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/7VeToYUwL5OI6NYXvrg9"
+    style="width:100%;height:100%;border:none;border-radius:8px;overflow:hidden;"
+    scrolling="no"
+    id="inline-7VeToYUwL5OI6NYXvrg9-2"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Form Landing One"
+    data-height="615"
+    data-layout-iframe-id="inline-7VeToYUwL5OI6NYXvrg9-2"
+    data-form-id="7VeToYUwL5OI6NYXvrg9"
+    data-cookie-consent="true"
+    data-cookie-consent-provider="auto"
+    title="Form Landing One"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
         </div>
       </div>
     </div>
